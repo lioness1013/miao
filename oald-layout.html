@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body,html{
+      width:100%;
+      height:100%;
+      box-sizing: border-box
+      }
+
+    .seach{
+      width: 150px;
+      height:100%;
+      background-color:aqua;
+      xdisplay:inline-block;
+      vertical-align: top;
+      float: left;
+    }
+    .explanation{
+      width: calc(100% - 450px);
+      height:100%;
+      background-color:red;
+      xdisplay:inline-block;
+      margin-left: -5px;
+      vertical-align: top;
+      float: left;
+      min-width: 200px;
+    }
+    .vocabulary{
+      width: 150px;
+      height:100%;
+      background-color:rgb(0, 132, 255);
+      xdisplay:inline-block;
+      margin-left: -5px;
+      vertical-align: top;
+      float: left;
+    }
+    .history{
+      width: 150px;
+      height:100%;
+      background-color:rgb(44, 111, 255);
+      xdisplay:inline-block;
+      margin-left: -5px;
+      vertical-align: top;
+      float: left;
+    }
+
+    .word{
+      height: 20%;
+      min-width: 100px;
+      background-color: orange;
+    }
+    .description{
+      height:80%;
+      background-color:yellow;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="seach"></div>
+  <div class="explanation">
+    <section class="word"></section>
+    <section class="description"></section>
+  </div>
+  <div class="vocabulary"></div>
+  <div class="history"></div>
+</body>
+</html>
