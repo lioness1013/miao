@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/jemicer/4/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="oald-layout-position">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body,html{
+  margin: 0;
+  height: 100%;
+}
+
+div{
+  font-size: 0;
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+}
+
+div > *{
+  box-sizing:border-box;
+  font-size: initial;
+}
+
+.a1{
+  background-color: red;
+  width: 20%;
+  height: 100%;
+}
+.a2{
+  background-color: orange;
+  width: 40%;
+  height: 100%;
+  position: relative;
+  top:-100%;
+  right:-20%;
+}
+.a3{
+  background-color: violet;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  top:-200%;
+  right:-60%;
+}
+h2{
+  margin: 0;
+  height: 50px;
+  background-color: blue;
+}
+main{
+  height:calc(100% - 50px);
+  background-color: yellow;
+}
+.a4{
+  background-color: green;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  top:-300%;
+  right:-80%;
+}
+</style>
+</head>
+<body>
+  <div>
+    <section class="a1">a1</section>
+    <section class="a2">a2</section>
+    <section class="a3">
+      <h2>h2</h2>
+      <main>main</main>
+    </section>
+    <section class="a4">a4</section>
+  </div>
+</body>
+</html>

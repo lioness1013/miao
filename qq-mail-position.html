@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/xodekal/6/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="qqmai_position">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body,html{
+  height: 100%;
+  margin: 0;
+}
+
+header{
+  background-color: green;
+  height:100px;
+  width:100%;
+  border-bottom: 1px solid #000;
+}
+
+main{
+  height: 100%;
+  font-size: 0;
+  width:100%;
+}
+
+main > *{
+  font-size: initial;
+  box-sizing: border-box;
+}
+
+aside{
+  background-color: orange;
+  height:100%;
+  width: 100px;
+  border-right:1px solid;
+}
+
+section{
+  background-color: yellow;
+  height:100%;
+  width:calc(100% - 100px);
+  position: relative;
+  top:-100%;
+  right:-100px;  
+}
+</style>
+</head>
+<body>
+  <header>QQ MAIL</header>
+  <main>
+    <aside>asdasd</aside>
+    <section>zxczxc</section>
+  </main>
+</body>
+</html>
