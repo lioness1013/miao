@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/kadonuk/16/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="twitter-heart">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+label {
+  display:inline-block;
+  height:100px;
+  width:100px;
+  background-image: url(https://abs.twimg.com/a/1542244373/img/animations/web_heart_animation_edge.png);
+  background-position:0 0;
+}
+
+input:checked + label{
+  transition:background-position 1s steps(28);
+  background-position:right;
+}
+
+
+
+</style>
+</head>
+<body>
+
+    <input id="heart" type="checkbox">
+    <label for="heart"></label>
+
+</body>
+</html>
