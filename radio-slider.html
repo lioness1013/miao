@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/hoqisaz/8/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="radio-slider">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body,html{
+  width: 100%;
+}
+div{
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  position:absolute;
+  left:100%;
+  top:100px;
+  transition:1s left;
+}
+
+input:checked + * + * + img {
+  left:0;
+}
+</style>
+</head>
+<body>
+<div>
+  
+    <input type="radio" name="slider-image" checked>
+    <input type="radio" name="slider-image">
+    <input type="radio" name="slider-image">
+    
+    <img src="https://i1.mifile.cn/a4/xmad_15427181908339_moblU.jpg" alt="">
+    <img src="https://i1.mifile.cn/a4/xmad_15429717792623_eYIpi.jpg" alt="">
+    <img src="https://i1.mifile.cn/a4/xmad_15419444636681_bNPLV.jpg" alt="">
+
+</div>
+
+
+</body>
+</html>

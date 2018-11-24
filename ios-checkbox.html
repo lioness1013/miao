@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/digulus/5/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="ios-checkbox">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body{
+  xbackground-color: grey;
+  box-sizing:border-box;
+}
+.switcher{
+  width: 44px;
+  background-color: gray;
+  height:24px;
+  border-radius:9999px;
+  border:0px solid green;
+  box-sizing:border-box;
+  transition:border 0.3s;
+  position: relative;
+  bottom:-24px;
+  box-sizing:border-box;
+}
+.button{
+  width: 20px;
+  height:20px;
+  margin:2px;
+  background-color: white;
+  box-sizing:border-box;
+  position:relative;
+  left:0;
+  border-radius:20px;
+  transition:left 0.3s;
+
+}
+
+input:checked + label > .switcher{
+  border:12px solid green;
+}
+
+input:checked + label > .button{
+  left: 20px;
+}
+</style>
+</head>
+<body>
+<div>
+ <input type="checkbox" id="switcher" hidden>
+ <label for="switcher">
+ <div class="switcher"></div>
+ <div class="button"></div>
+</div>
+</label>
+</body>
+</html>
