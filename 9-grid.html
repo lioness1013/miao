@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/wumolik/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="9-grid.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+div{
+  width:270px;
+  height:270px;
+  box-sizing:border-box;
+}
+
+span{
+  width:90px;
+  height:90px;
+  border:4px blue solid;
+  box-sizing:border-box;
+  float:left;
+  text-align:center;
+  line-height:90px; 
+  position: relative;
+}
+
+.item2,.item5,.item8{
+  right:5px;
+}
+.item3,.item6,.item9{
+  right:10px;
+}
+.item4,.item5,.item6{
+  top:-5px;
+}
+.item7,.item8,.item9{
+  top:-10px;
+}
+span:hover{
+  border-color:red;
+  z-index:12;
+}
+</style>
+</head>
+<body>
+  <div>
+    <span class="item1">1</span>
+    <span class="item2">2</span>
+    <span class="item3">3</span>
+    <span class="item4">4</span>
+    <span class="item5">5</span>
+    <span class="item6">6</span>
+    <span class="item7">7</span>
+    <span class="item8">8</span>
+    <span class="item9">9</span>
+  </div>
+</body>
+</html>
