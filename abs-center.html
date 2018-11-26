@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/tinujan/18/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="abs-center.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+div{
+  width: 400px;
+  height:200px;
+  border:3px solid; 
+  margin: 10px;
+}
+
+section{
+  background-color: green;
+  color:white;
+}
+
+/*子元素宽高固定时：*/
+.d1 > section,.d2 > section, .d3 > section{
+  width: 180px;
+  height: 70px;
+}
+
+/*方法1:absolute，再移动自身宽高的一半*/
+.d1{
+  position: relative;
+}
+.d1 > section{
+  position: absolute;
+  left:50%;
+  top:50%;
+  margin-left: -90px;
+  margin-top: -35px;
+}
+
+/*方法2:inline-block，margin-top是父元素一半高度减去子元素一半高度*/
+.d2{
+  text-align: center; 
+}
+.d2 > section{
+  display: inline-block;
+  margin-top:calc(100px - 35px);
+}
+
+/*方法3:absolute四面限制+margin auto*/
+.d3{
+  position: relative;
+}
+.d3 > section{
+  position: absolute;
+  top:0;
+  right:0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+/*子元素宽高未知时：*/
+/*方法4：将父元素设置为table-cell*/
+.d4{
+  display:table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.d4 > section{
+  margin: 40px;
+}
+
+/*方法5：子元素transform*/
+.d5{
+  position: relative;
+}
+.d5 > section{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%)
+}
+
+/*方法6：父元素flex*/
+.d6 {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+   <div class="d1"> 
+    <section>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </section>
+   </div>
+
+   <div class="d2"> 
+    <section>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </section>
+   </div>
+  
+   <div class="d3"> 
+    <section>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </section>
+   </div>
+  
+   <div class="d4"> 
+    <section>
+      Lorem ipsum icing elit.
+    </section>
+   </div>
+  
+   <div class="d5"> 
+    <section>
+      Lorem ipsumn.
+    </section>
+   </div>
+  
+    <div class="d6"> 
+    <section>
+      Lorem ipsumn.
+    </section>
+   </div>
+
+</body>
+</html>
