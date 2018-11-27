@@ -3,7 +3,7 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2018 by lioness1013 (http://jsbin.com/tecocag/1/edit)
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/tecocag/6/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
@@ -33,11 +33,67 @@ li{
 }
 
 li:hover{
-  box-shadow:
+  box-shadow:0 0 0 2.5px red;
+  border-color:red;
+  position: relative;
+  z-index:9;
 }
+
+table{
+  border-collapse:collapse;
+  /*必须声明collapse才能使row和col边框生效*/
+}
+
+td{
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  text-align: center;
+}
+tr, col{
+  border:5px solid black;
+}
+
+td:hover{
+  border:5px solid red;
+  position: relative;
+  z-index:9;
+}
+
 </style>
 </head>
 <body>
-ul>li*9
+<ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ol>
+  
+<table>
+  <col>
+  <col>
+  <col>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+  </tr>
+</table>
 </body>
 </html>
