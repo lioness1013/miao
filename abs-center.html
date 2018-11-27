@@ -78,38 +78,39 @@ section{
   margin: 40px;
 }
 
-/*方法5：子元素transform*/
+/*方法5：inline-block*/
 .d5{
-  position: relative;
+  line-height: 200px;
+  text-align: center;
+  font-size: 0;
 }
 .d5 > section{
+  vertical-align: middle;
+  font-size: medium;
+  display: inline-block;
+  line-height: normal;
+}
+
+/*方法6：子元素transform*/
+.d6{
+  position: relative;
+}
+.d6 > section{
   position: absolute;
   left:50%;
   top:50%;
   transform:translate(-50%,-50%)
 }
 
-/*方法6：父元素flex*/
-.d6 {
+/*方法7：父元素flex*/
+.d7 {
   display:flex;
   justify-content:center;
   align-items:center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 </head>
+
 <body>
    <div class="d1"> 
     <section>
@@ -146,6 +147,12 @@ section{
       Lorem ipsumn.
     </section>
    </div>
+
+    <div class="d7"> 
+     <section>
+       Lorem ipsumn.
+     </section>
+    </div>
 
 </body>
 </html>

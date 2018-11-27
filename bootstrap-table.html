@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/xiheja/9/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="bootstrap-table">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body,html{
+  width:100%;
+}
+
+.input-group > * {
+  display: table-cell;
+
+}
+/*利用table的特性，即为table cell元素
+尽量安排合理的宽度，因此把可变动的部分宽度设置为table宽度
+100%*/
+.input-group{
+  width:300px;
+  height:40px;
+  display:table;
+  border-collapse:seperate;
+}
+
+.input-group-addon{
+  width:1%;
+  background: grey;
+  border:2px solid ;
+  vertical-align: middle;
+}
+
+input{
+  border:2px solid;
+  position: relative;
+  width: 100%;
+  height:100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
+</head>
+<body>
+<div class="input-group">
+  <div class="input-group-addon">$oiuoiuoi</div>
+  <input type="text" placeholder="Amount">
+  <div class="input-group-addon">.0980</div>
+</div>
+</table>
+</body>
+</html>
