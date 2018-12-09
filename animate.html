@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by lioness1013 (http://jsbin.com/movihaz/6/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="animate">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+div {
+
+  height:200px;
+  border:0.5px solid black;
+}
+
+.bounce{
+  font-size:50px;
+  margin-top:60px;
+  background:linear-gradient(yellow,green);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-align:center;
+  animation: bounce 1s;
+}
+@keyframes bounce{
+  0%   {margin-top:30px;}
+  25%  {margin-top:0px;}
+  50%  {margin-top:60px;}
+  70%  {margin-top:30px;}
+  85%  {margin-top:60px;}
+  95%  {margin-top:45px;}
+  100% {margin-top:60px;}
+}
+
+.pulse{
+  font-size:50px;
+  margin-top:60px;
+  background:linear-gradient(yellow,red);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-align:center;
+  animation: pulse 1s ;
+}
+@keyframes pulse{
+  50% {transform:scale(1.2);}
+  to {transform:scale(1);}
+}
+
+.rubber{
+  font-size:50px;
+  margin-top:60px;
+  background:linear-gradient(white,black);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-align:center;
+  animation: rubber 1s ;
+}
+@keyframes rubber{
+  25%  {transform:scale(1.2,0.8);}
+  50%  {transform:scale(0.8,1.2);}
+  75%  {transform:scale(1.1,0.9);}
+  100% {transform:scale(1);}
+}
+
+.swing{
+  font-size:50px;
+  margin-top:60px;
+  background:linear-gradient(white,black);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-align:center;
+  animation: swing 1s;
+}
+@keyframes swing{
+  30%  {transform:rotate(0.2turn);}
+  55%  {transform:rotate(-0.2turn);}
+  75%  {transform:rotate(0.1turn);}
+  90% {transform:rotate(-0.1turn);}
+  95% {transform:rotate(0.05turn);}
+  100% {transform:rotate(0turn);}
+}
+
+.tada{
+  font-size:50px;
+  margin-top:60px;
+  background:linear-gradient(orange,blue);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-align:center;
+  animation: tada 1s;
+}
+@keyframes tada{
+  20%  {transform:rotate(0.2turn) scale(0.9);}
+  40%  {transform:rotate(-0.2turn) scale(1.1);}
+  60%  {transform:rotate(0.1turn);}
+  70%  {transform:rotate(-0.1turn);}
+  80% {transform:rotate(0.1turn);}
+  90%  {transform:rotate(-0.1turn);}
+  100% {transform:rotate(0turn) scale(1);}
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div>
+  <section class="rubber">RUBBER</section>
+</div>
+
+<div>
+  <section class="swing">SWING</section>
+</div>
+
+<div>
+  <section class="bounce">BOUNCE</section>
+</div>
+
+<div>
+  <section class="pulse">PULSE</section>
+</div>
+
+<div>
+  <section class="rubber">RUBBER</section>
+</div>
+  
+
+  
+</body>
+</html>
