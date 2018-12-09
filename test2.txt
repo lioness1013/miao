@@ -1,0 +1,638 @@
+-f大喵教育前端培训
+================
+
+## 阶段性测试 2018.12.07
+
+### 大喵教育版权所有 | 出题人：谢然 | 答题人：林朵朵
+
+
+01. 用文字描述如下选择器将选择哪些（个）元素
+    ```css
+    div, h1 {}
+    所有div元素和h1元素
+
+    div[class] [id="abc"] {}
+    具有class属性且id为abc的div元素
+
+    div:hover ul li > div {}
+    当div被hover时，div里面的ul里面的li的直接div子元素
+
+    body :active {}
+    当被点击时的body元素
+
+    div:hover::after {}
+    div被hover时div的after伪元素
+
+    ::selection {}
+    文档中被用户高亮的部分
+
+    :target {}
+    选中id为url中#后面的内容的元素
+
+    input + ul + p ~ span {}
+    input后面紧跟的ul元素后面紧跟的p标签后面同级的任何的span标签
+    ```
+
+02. 分别写出如下几个选择器的优先级
+    
+    ```css
+    * * * {}
+    （0，0，0，0）
+    div * span {}
+    （0，0，0，2）
+    div[title] {}
+    （0，0，1，1）
+    fieldset legend + input {}
+    （0，0，0，3）
+    #some #thing .not:hover .abc:hover {}
+    （0，2，2，0）
+    ```
+
+03. https://www.example.com/a/b/ 页面中有如下代码
+    ```html
+    <link rel="stylesheet" href="//test.example.com/path/../the/../path/c.css">
+    ```
+    请问最终引入的c.css的完整路径是什么？
+    
+    https://www.example.com/a/b/test.example.com/path/c.css
+
+04. `em,px,rem,vw,vh` 分别代表多长？
+    
+    em: 当前元素字体大小
+    px: CSS像素
+    rem： 根元素字体大小
+    vw：视口宽度，1vw=视口宽度的1%
+    vh：视口高度，1vh=视口宽度的1%
+    
+05. 显示器的物理分辨率为 `1920x1080`，操作系统设置的分辨率为 `1280x720`，网页的放大倍数为 `110%`，请计算一个 CSS 像素对应多少个显示器物理像素（面积与长度）？
+
+长度：(1920/1280)*1.1 = 1.65
+
+面积：1.65² = 2.72
+
+06. 写出如下代码显示在浏览器后**每个单词**的字号
+    ```html
+    <style>
+      html {
+        font-size: 20px;
+      }
+      section {
+        font-size: 10rem;
+      }
+      p {
+        font-size: 24px;
+      }
+      span {
+        font-size: 150%;
+      }
+      .sucks {
+        font-size: inherit;
+      }
+    </style>
+    <body>
+      <section>
+        <h2>Brown</h2>
+        <p>quick</p>
+        <p>jumps <span>over <span>lazy</span> dog</span></p>
+        <p class="sucks">sucks</p>
+      </section>
+    </body>
+    ```
+    
+    解答：
+    rem=20px; em=200px; h2=1.5em;
+    Brown：300px
+    quick：24px
+    jumps：24px
+    over：24 * 150% = 36px
+    lazy：36 * 150% = 54px
+    dog：36px
+    sucks：200px
+
+
+07. 字体的 italic 与 obsolete 的区别是？
+    
+    italic是字体中塑造的倾斜，obsolete是人为制造出的视觉上的倾斜。
+
+08. 写出满足如下条件的选择器
+    
+    * 第8个子结点之后，倒数第 5 个子结点之前的li结点
+      li:nth-child(n+8) li:nth-last-child(n+5){}
+    * 【类名】以“damiao-”开头的元素
+      E[class^="damiao-"],E[class*="damiao-"]{}
+    * rel 属性中有 nofollow 这个单词的标签
+      E[rel~="nofollow"]{}
+
+=09. 链接伪类的几种状态书写的顺序是什么？为什么？
+   
+    link-visited-foucs-hover-active
+
+    active放在最后因为如果元素已经交互过了，那么就已经是visited的状态。
+
+10. 如下 font 属性的值哪一个是书写正确的？
+    
+    * font: serif 24px;
+    * font: serif bold 24px/1.2;
+    * font: bold 24px/1.2 serif; 正确
+
+11. vertical-align 取 middle 时元素如何对齐？
+    
+    将元素的垂直方向正中间与父元素从基线位置加上父元素X字母高度的一半的位置对齐
+
+12. 什么是 baseline？
+    
+    baseline是字母x的下端线
+
+13. 详述你对盒模型的理解。
+    
+    每个元素都在一个盒子里面，这个模型描述了元素所占空间的内容，这个方形又四条边为何合成，边距又有内外两个边距。一个html页面就是由许多个盒子，自上而下，从左到右排列而组成的。
+
+14. 如何让一个元素可被 focus？如何去掉其被 focus 时的虚框？
+    
+    It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's "tab" key.
+    :focus{outline:none;}
+
+15. 如何给css添加注释
+    
+    /* annotation */
+
+16. 指出如下css代码中的错误
+    ```
+    p,h1,{
+        
+        background-color: rgba:(abc)
+        font-varient; abc;
+        colr: #ff048;
+        font: "serif" 25px;
+    }
+    ```
+    
+    1.h1后面多了一个comma
+    2.background-color:rgba(red值，green值，blue值，alpha值)
+    3.拼写错误+设置为小写方法错误，应为font-variant:small-caps;
+    4.color:#ff后面要跟四位数字
+    5.加了引号就是字体名称而不是字体族了，且字体族名字应该放在最后面
+
+17. 元素的高度写百分比在什么情况下【无效】，为什么？在什么情况下【有效】，有效时是以哪个元素的高度为基准值？
+    
+    元素只有在父元素，以及父元素的父元素（一直往上追溯到html元素时）都有高度时，元素高度写百分比才有效，以元素本身的父元素高度为基准。
+
+18. 解释 box-sizing 可以取哪些值，以及每个值的意义
+    
+    content-box: the size of box is based on the content size.
+    border-box: base on the border;
+
+19. 如下结构中，div 有两个伪元素，分别标出伪元素的位置，用 `<before></before>` 表示 `::before` 伪元素，用 `<after></after>` 表示 `::after` 伪元素
+    
+    ```html
+    <div>
+      <h1>The article</h1>
+      <p>the quick brown fox</p>
+    </div>
+    ```
+    <div>
+      <before></before>
+      <h1>The article</h1>
+      <p>the quick brown fox</p>
+      <after></after>
+    </div>
+
+20. 如何在伪元素中插入换行符？如何让这个换行符在页面中生效？
+    
+    E：after {
+		  content:"换行之前的的内容 \A 换行之后的内容";
+		  white-space:pre;
+    } 
+
+21. 简述 ie7 市场份额比 ie6 低的原因并在网络上找出目前各大浏览器在中国和全球的市场份额
+    
+    中国用户使用windows xp的占比很大，xp绑定的浏览器是ie6.而且ie7在xp系统中有不兼容。用户不熟悉ie7的操作，使得用户的学习成本提高，用户迁移比较困难。
+
+    2018年10月，全球PC浏览器市场份额排行榜▼
+    第1名：Google的Chrome浏览器，其全球市场份额为69.64%；
+    第2名：Mozilla Firefox，其市场份额为10.14%；
+    第3名：微软的IE浏览器，其市场份额为6.01%；
+    第4名：苹果的Safari浏览器，其市场份额为5.61%；
+    第5名：微软的Edge浏览器，其市场份额为4.21%；
+    第6名：Opera浏览器，其市场份额为2.29%；
+    其他浏览器的市场份额合计为2.08%。
+
+    2018年10月，国内PC浏览器市场份额排行榜▼
+    Google的Chrome浏览器排名第一，其市场份额为46.12%；
+    微软的IE浏览器排名第二，其份额为19.95%；（其中，IE9的份额为7.71%，IE11的份额为6.19%，IE8的份额为6.05%）
+    QQ浏览器排名第三，其份额为5.66%；
+    2345加速浏览器排名第四，其份额为5.30%；
+    搜狗高速浏览器排名第五，其份额为4.63%；
+    苹果的Safari浏览器排名第六，份额均为2.58%；
+    火狐浏览器排名第七，份额为2.54%；
+    其他浏览器的市场份额合计为13.23%。
+
+22. 页面有无 `doctype` 声明会有什么区别？
+    
+    ie6之前的ie浏览器，有些内容不符合W3C的标准，ie6开始复合和模型规范后，为了让老的针对ie6之前版本写的页面也能够正常显示，设置了两种渲染模式：standard mode, quircks mode.针对满足w3c标准的页面，就会使用正常渲染模式。如果不声明doctype就会被浏览器当作是quircks mode的渲染方式去解析页面，从而产生一些奇怪的效果。
+
+23. 有一张高为 100 宽为 50 的图片，内有一个直径为 40 的圆，其做为一个 200x200 的元素的背景图片，background-size 为 contain 和 cover 时，圆的直径分别为多少？
+    
+    contain: diameter = 80
+    cover: diameter = 160
+
+24. 写出实现小米网首页 logo 返回主页的动画效果的代码。
+
+  div {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-image: url(mi-home.png), url (mi-logo.png);
+    background-position: 0 0,50px 0;
+    transition: background-position .2s;
+  } 
+  div:hover {
+    background-position: -50px 0, 0 0;
+  }
+
+25. 给出至少 5 种水平垂直居中方案。
+    
+    方法1: flex + justify-content + align-items
+    代码：
+    <div class="parent">
+      <div class="child">content</div>
+    </div>
+
+    <style>
+      .parent {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+      }
+    </style>
+
+    方法2：table-cell + vertical-align + text-align + inline-block
+    代码：
+    <div class="parent">
+      <div class="child">content</div>
+    </div>
+
+    <style>
+      .parent{
+        display:table-cell;
+        veritical-align:middle;
+        text-align:center;
+      }
+      .child{
+        display:inline-block;
+      }
+    </style>
+
+    方法3: absolute + transform 
+    代码：
+    <div class="parent">
+      <div class="child">content</div>
+    </div>
+    <style>
+      .parent{
+        position: relative;
+      }
+      .child{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      </style>
+    
+    方法4:absolute，再移动自身宽高的一半*/
+      .parent{
+        position: relative;
+      }
+      .child{
+        height：100px;
+        width:100px;
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin-left: -50px;
+        margin-top: -50px;
+      }
+
+    方法5:absolute + 四面限制 + margin auto
+    代码：
+    .parent{
+      position: relative;
+    }
+    .child{
+      height：100px;
+      width:100px;
+      position: absolute;
+      top:0;
+      right:0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }    
+
+26. 简述 em 框，内容区，行内框，行框的构成以及其需要注意的问题。
+    
+    em框：在字体中定义，也称为字符框（character box）。实际的字形可能比其em框更高或更矮。在CSS 中，font-size的值确定了各个em框的高度。 
+    
+    内容区：在非替换元素中，内容区可能有两种，CSS2.1规范允许用户代理选择其中任意一种。内容区可以是元素中各字符的em框串在一 起构成的框，也可以是由元素中字符字形描述的框。在替换元素中，内容区就是元素的固有高度再加上可能有的外边距、边框或内边距。 
+    
+    行内框：这个框通过向内容区增加行间距来描述。对于非替换元素，元素行内框的高度刚好等于line-height的值。对于替换元素，元素行内框的高度则恰好等于内容区的高度，因为行间距不应用到替换元素。 
+    
+    行框：这是包含该行中出现的行内框的最高点和最低点的最小框。行框的上边界要位于最高行内框的上边界，而行框的底边要放在最低行内框的下边界。
+
+    注意问题：
+        * 内容区类似于一个块级元素的内容框。
+        * 行内元素的背景应用于内容区及所有内边距。
+        * 行内元素的边框要包围内容区及所有内边距和边框。
+        * 非替换元素的内边距、边框和外边距对行内元素或其生成的框没有垂直效果，也就是说，它们不会影响元素行内框的高度（也不会影响包含该元素的行框的高度）。
+        * 替换元素的外边距和边框确实会影响该元素行内框的高度，相应地，也可能影响包含该元素的行框的高度。
+        * line-height实际上只影响行内元素和其他行内内容，而不影响块级元素，至少不会直接影响块级元素。也可以为一个块级元素设置line-height值，但是这个值只是应用到块级元素的内联内容时才会有视觉影响。
+
+27. 如何确定一个行内框的baseline及其最高点和最低点？
+    
+    行内框baseline由字母x的下端线决定，其最高点是内容区域最顶端往上 + 1/2行距，最低点是内容区域最低点往下 + 1/2行距。
+
+28. `td` 元素的 `headers` 属性是干嘛的？
+    
+    headers 属性规定与表格单元格相关联的一个或多个表头单元格
+
+29. color 这个属性有什么需要注意的地方？
+    
+    1.颜色可以用数值(rgb,rgba)，关键字表示，但不能使用百分数；
+    2.颜色具有继承性
+    3.浏览器不支持cmyk颜色格式
+    4.注意可访问性，W3C的Web内容可访问性指南[WCAG20]：
+      1.4.1 使用颜色：颜色的使用不应该仅为了从视觉上传递信息、表明动作、提示回应或区分视觉元素。
+
+30. 如何理解 inline-block 元素？它有什么需要注意的地方？
+    
+    inline-block既拥有了block元素可以设置width和height的特性，又保持了inline元素不换行的特性。
+    注意事项：
+    1.inline元素之间会有空白符（空白间隙），消除空白符的方法：将父元素的font-size设置为0，再将子元素font-size重新设置成需要的值。
+    2.inline元素垂直方向的对齐方式默认是baseline，但是有时候会无法完全对齐，因此可以设置成vertical-align:middle;
+
+31. 什么是 CSS Sprite？为什么要使用 CSS Sprite？它有哪些优缺点？
+   
+    CSS Sprites是一种网页图片应用处理方式，就是把网页中一些背景图片整合到一张图片文件中，再利用CSS的“background-image”，“background- repeat”，“background-position”的组合进行背景定位。 
+    优点：
+        * 减少网页的http请求，提高性能，这也是CSS Sprites最大的优点，也是其被广泛传播和应用的主要原因；
+        * 减少图片的字节：多张图片合并成1张图片的字节小于多张图片的字节总和；
+        * 减少了命名困扰：只需对一张集合的图片命名，不需要对每一个小元素进行命名提高制作效率；
+        * 更换风格方便：只需要在一张或少张图片上修改图片的颜色或样式，整个网页的风格就可以改变，维护起来更加方便。
+
+    缺点：
+        * 图片合成比较麻烦；
+        * 背景设置时，需要得到每一个背景单元的精确位置，；
+        * 维护合成图片时，最好只是往下加图片，而不要更改已有图片。
+
+32. 找出如下代码中的错误
+    ```
+    <style>
+      div::after：hover { /*只有父元素可以选中，应写为 div:hover::after {
+        opacity: 85%；/*opacity只能写0-1之间的小数，应写为0.85）
+        transition: opactiy .3s step(5,end); /step没加s*/
+      }
+      a:visited {
+        font-size: 28px; /*链接伪类只能设置两个属性color/backgroud-color*/
+      }
+    </style>
+    <div>
+      <a href="jd.com”>京东商场<a> a标签闭合写错了，应写为</a>
+      <a href="mi.com”>小米网<a>
+    </div>
+    ```
+
+33. 如下内容渲染在【同一行】中，请计算那一行的理论行高
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>JS Bin</title>
+      <style>
+        div {
+          margin: 80px;
+          background-color: violet;
+        }
+        span {
+          display: inline-block;
+          border: 1px dotted;
+          background-color: pink;
+        }
+
+        .a {
+          vertical-align: -15px;
+          width: 30px;
+          height: 30px;
+        }
+        .b {
+          margin-top: -50px;
+          width: 30px;
+          height: 30px;
+          vertical-align: top;
+        }
+        .c {
+          margin-bottom: 10px;
+          vertical-align: middle;
+        }
+        .d {
+          width: 30px;
+          height: 30px;
+        }
+      </style>
+    </head>
+    <body>
+      <div>
+        x<span class="a">foo</span>
+        <span class="b">bar</span>
+        <span class="c">baz</span>
+        <span class="d"></span>
+      </div>
+    </body>
+    </html>
+    ```
+    解答：行内的最低元素是a，垂直方向下沉15px，最高元素是b，对齐字母x的顶端，自身高度是30px，因此div元素的理论行高是
+    15px + 30px + 16px（x默认字体高度16px）= 61px
+
+34. `vertical-align` 取值为 `baseline` 时在不同情况下分别是如何对齐的？
+    
+    1.inline-table元素的baseline是它的table第一行的baseline。
+    2.父元素【line box】的baseline是最后一个inline box 的baseline。 
+    3.inline-block元素的baseline确定规则：
+        规则1：inline-block元素，如果内部有line box，则inline-block元素的baseline就是最后一个作为内容存在的元素[inline box]的baseline，而这个元素的baseline的确定就要根据它自身来定了。
+        规则2：inline-block元素，如果其内部没有line box或它的overflow属性不是visible，那么baseline将是这个inline-block元素的底margin边界。
+
+35. 解释常规流与包含块的概念
+    
+    包含块：
+        每个元素都相对于其包含块摆放，包含块就是一个元素的布局上下文。 对于正常的西方语言文本流中的一个元素，包含块由最近的块级祖先框、表单元格或行内块祖先框的内容边界(content edge)构成。
+    常规流：
+        这是指西方语言文本从左向右、从上向下显示，这也是我们熟悉的传统HTML文档的文本布局，注意，在非西方语言中，流方向可能不同。大多数元素都在正常流中，要让一个元素不在正常流中，唯一的办法就是使之成为浮动或定位元素。
+
+
+36. 在各种情况下，一个元素的包含块分别是什么？
+    
+    确定一个元素的包含块的过程完全依赖于这个元素的 position 属性：
+
+        如果 position 属性为 static 或 relative ，包含块就是由它的最近的祖先块元素（比如说inline-block, block 或 list-item元素）或格        式化上下文(比如说 a table container, flex container, grid container, or the block container itself)的内容区的边缘组成       的。
+        如果 position 属性为 absolute ，包含块就是由它的最近的 position 的值不是 static （也就是值为fixed, absolute, relative 或        sticky）的祖先元素的内边距区的边缘组成。
+        如果 position 属性是 fixed，包含块就是由 viewport (in the case of continuous media) 或是组成的。
+        如果 position 属性是 absolute 或 fixed，包含块也可能是由满足以下条件的最近父级元素的内边距区的边缘组成的：
+        A transform or perspective value other than none
+        A will-change value of transform or perspective
+        A filter value other than none or a will-change value of filter (only works on Firefox).
+
+37. 默写与背景相关的属性并说明每个属性的作用和会产生的效果
+    background-image：url；引入背景图片,可以同时引入多个图片
+    
+    background-size：
+      contain：背景图片正好被所属元素整个包裹住。注意设置background-repeat是否要no-repeat
+      cover：背景图片正好把所有元素全部覆盖住
+      X%：图像按照原图大小的百分之x平铺
+      Xpx Ypx; 宽度伸缩为Xpx，高度伸缩为Ypx；
+
+    background-clip:背景图片按照不同等区域剪切
+      border-box / padding-box / content-box / text;
+
+    background-color: 设置背景颜色
+
+    background-origin：背景图片从拿开始算起始点（置入位置）
+      border-box / padding-box / content-box
+    
+    background-repeat：
+      repeat/repeat-x/no-repeat/space/round/space-repeat
+
+    background-postion:
+      top/left/right/bottom/数值/百分比（背景图片的百分比位置和元素百分比位置对齐）
+    
+    background-position：
+      fixed：背景图片相对于浏览器窗口不动
+	    scroll：当滚动条开始出现的时候跟着一起滚动
+      local：背景图片会跟着滚动条一起运动
+
+38. 如何实现单方向的盒子阴影？
+  
+    让扩张值为负且数值正好等于模糊值，按照需要的方向，再给偏移量一个参数。比如box-shadow: 5px 0 6px -6px gray;
+
+39. 默写与表格布局相关的 CSS 属性，并说明相关属性的作用
+    
+    border-collapse:设置了这个属性才能设置表格边框的样式
+      collapse:单元格边框合并
+      separate：不合并
+
+    border-spacing:单元格边框的间距px
+
+    caption-side:top/bottom 表格题目的位置
+
+    empty-cell:show/hide 内容为空的单元格是否要显示
+
+    table-layout:auto/fixed 单元格宽度是自动变化还是固定宽度
+
+    vertical-align: top/bottom/middle/baseline/sub/text-top 单元格内容对齐方式
+
+40. `visibility:hidden`，`display:none`，`opacity:0`分别有什么不同？
+    `visibility:hidden`:位置存在，但是不显示。可以用transition。
+    `display:none`：位置不在了，但是元素还存在。
+    `opacity:0`：完全透明，元素还在，位置也在，看不见。
+
+41. 当页面中出现表示时间的文字但表意不明确时，比较优雅且富有语义的做法是什么？
+
+  <time datetime="2018-12-8">昨天</time>
+
+42. CSS 中一般为何不使用 `cm`，`mm` 等长度单位？
+    因为不同的设备尺寸差异很大，用物理单位很难做到准确的设计。
+
+43. 表格布局中各层的层次是？
+从小到大层次：单元格-行-行组/列-列组-表
+
+44. 为什么要在文件的最后一行加一个回车？
+    1.在git diff的时候不会显示额外的diff信息
+    2.在拼接文件时，可以有助于不同文件之间断开，不损坏文件内容的语义
+
+45. 用 CSS 画出一个半圆形，分别给出实心与空心的的画法。实心和空心分别给出两种方案。
+
+    方案1：
+      div{
+        width: 100px;
+        height: 50px;
+        border-radius:100px 100px 0 0;
+        background-color: green; /*实心*/
+        border:solid; /*空心*/
+        }    
+
+46. 表单元素有哪些伪类选择器？
+	* focus 
+	* *required/opntional
+	* *valid/invalid
+	* *read-only/read-write
+	* *in-range/out-of-range
+  * checked
+
+47. 如何禁用 textarea 元素默认的可缩放行为？
+    textarea {
+      resize: none;
+    }
+
+48. reset与normalize分别是什么，区别是什么，何种场景会使用到？
+  
+  reset是将元素的所有浏览器默认样式全部抹去，重新给它们一些样式，这样各种不同的浏览器在渲染的时候就会按照设置的样式来渲染。
+  
+  normalize是保留有用的浏览器默认样式，只是将需要规范的样式在各种浏览器中保持一致且符合规范，可用性比reset更强。
+
+  区别：
+  1. Normalize.css 保护了有价值的默认值
+  2. Normalize.css 修复了浏览器的bug
+  3. Normalize.css 不会让你的调试工具变的杂乱
+  4. Normalize.css 是模块化的
+  5. Normalize.css 拥有详细的文档
+
+  场景：
+    可以讲normalize.css作为项目的基础css，自定义样式值来满足自己的需求，可以根据需求删除或者添加代码来修改normalize文件里面的样式。
+
+49. 表布局中边框合并的原则是什么？
+  	
+    border hidden 优先级最高
+    border none 最低
+    看粗细
+    看样式 double solid dashed 等等
+    看来源
+    取左方或上方来源的边框
+
+50. 如何让背景图片从元素的左下角向上偏移5像素，往右偏移3像素；图片不重复平铺？写出代码。
+    background-position: left 3px bottom 5px;
+    background-repeat: no-repeat;
+
+51. 写出创建如下目录结果的命令行脚本（注：有扩展名的为文件，没有扩展名的为文件夹）。
+    ```
+    a
+    │  readme.md
+    │
+    ├─foo
+    │  └─c
+    └─bar
+        │  a.txt
+        │  b.txt
+        │
+        └─y
+                a.js
+    ```
+
+    解答：
+    mkdir a
+    cd a
+    touch readme.md
+    cd ..
+    mkdir foo
+    cd foo
+    mkdir c
+    cd ../..
+    mkdir bar
+    touch bar/{a,b}.txt
+    mkdir bar/y
+    touch bar/y/a.js
+
+
+52. 中英互翻
+
+    omit删除，multiple多个，驼峰式Carmel case，中划线式middleline，layout布局，typo类型，code review代码审查，半径radius，config配置，集合set，矩形rectangle，binary二进制，decimal十进制，十六进hexadecimal，八进制octonary，SEO搜索引擎优化，HTML实体entities，语义化semantic，兼容性compatibility，quirk怪癖，reference参考，大小写敏感capital sensitive，别名alias
