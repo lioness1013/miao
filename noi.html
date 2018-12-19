@@ -1,3 +1,7 @@
+<script id=""  type="text/javascript">
+
+</script>
+
 <script id="ch0101/01"  type="text/javascript">
   console.log("Hello, World!");
 </script>
@@ -109,4 +113,365 @@
   var b = parseInt(prompt());
   var c = parseInt(prompt());
   console.log(Math.floor((a+b)/c));
+</script>
+
+<script id="ch0103/04"  type="text/javascript">
+  var a = parseInt(prompt());
+  var b = parseInt(prompt());
+  var mod = a%b;
+  console.log((a-mod)/b);
+  console.log(mod);
+</script>
+
+<script id="ch0103/05"  type="text/javascript">
+  var a = parseInt(prompt());
+  var b = parseInt(prompt());
+  console.log((a/b).toFixed(9));
+</script>
+
+<script id="ch0103/06"  type="text/javascript">
+  var a = parseInt(prompt('确诊数'));
+  var b = parseInt(prompt('死亡数'));
+  console.log(((b/a)*100).toFixed(3) + "%";)
+</script>
+
+<script id="ch0103/07"  type="text/javascript">
+  var x = Number(prompt()); 
+  var a = Number(prompt()); 
+  var b = Number(prompt()); 
+  var c = Number(prompt()); 
+  var d = Number(prompt());
+  console.log((a*x**3+b*x**2+c*x+d).toFixed(7)); 
+</script>
+
+<script id="ch0103/08"  type="text/javascript">
+  var a = Number(prompt());
+  console.log((5*(a-32)/9).toFixed(5));
+</script>
+
+<script id="ch0103/09"  type="text/javascript">
+  var r = Number(prompt());
+  console.log((2*r).toFixed(4));
+  console.log((2*(Math.PI)*r).toFixed(4));
+  console.log(((Math.PI)*r*r).toFixed(4));
+</script>
+
+<script id="ch0103/10"  type="text/javascript">
+  var r1 = Number(prompt());
+  var r2 = Number(prompt());
+  console.log((1/(1/r1+1/r2)).toFixed(2));
+</script>
+
+<script id="ch0103/11"  type="text/javascript">
+  var a = Number(prompt());
+  var b = Number(prompt());
+  console.log((a%b).toFixed(4));
+</script>
+
+<script id="ch0103/12"  type="text/javascript">
+  var r = Number(prompt());
+  console.log((4/3*3.14*r**3).toFixed(2));
+</script>
+
+<script id="ch0103/13"  type="text/javascript">
+  var n = Number(prompt());
+  var a1 = parseInt(n/100);
+  var a2 = parseInt(n/10%10);
+  var a3 = n%100%10;
+  console.log(a3+a2+a1);
+</script>
+
+<script id="ch0103/14"  type="text/javascript">
+  var h = parseInt(prompt());
+  var r = parseInt(prompt());
+  var v = Math.PI*r*r*h/1000;
+  console.log(Math.ceil(20/v));
+</script>
+
+<script id="ch0103/15"  type="text/javascript">
+  var n = Number(prompt());
+  var x = Number(prompt());
+  var y = Number(prompt());
+  console.log(n-Math.ceil(y/x));
+</script>
+
+<script id="ch0103/16"  type="text/javascript">
+  var xa = Number(prompt());
+  var ya = Number(prompt());
+  var xb = Number(prompt());
+  var yb = Number(prompt());
+  console.log((Math.sqrt((xa-xb)**2+(ya-yb)**2)).toFixed(3));
+</script>
+
+<script id="ch0103/17"  type="text/javascript">
+  var xa = Number(prompt());
+  var ya = Number(prompt());
+  var xb = Number(prompt());
+  var yb = Number(prompt());
+  var xc = Number(prompt());
+  var yc = Number(prompt());
+  var a = Math.sqrt((xa-xb)**2+(ya-yb)**2);
+  var b = Math.sqrt((xa-xc)**2+(ya-yc)**2);
+  var c = Math.sqrt((xb-xc)**2+(yb-yc)**2);
+  var s = (a+b+c)/2;
+  console.log((Math.sqrt(s*(s-a)*(s-b)*(s-c))).toFixed(2));
+</script>
+
+<script id="ch0103/18"  type="text/javascript">
+  var a1 = parseInt(prompt());
+  var a2 = parseInt(prompt());
+  var n = parseInt(prompt());
+  console.log(a1+(a2-a1)*(n-1));
+</script>
+
+<script id="ch0103/19"  type="text/javascript">
+  var a = parseInt(prompt());
+  var b = parseInt(prompt());
+  console.log(a*b);
+</script>
+
+<script id="ch0103/20"  type="text/javascript">
+  var n = parseInt(prompt());
+  console.log(Math.pow(2,n));
+</script>
+
+<script id="ch0104/01"  type="text/javascript">
+  var n = parseInt(prompt());
+  if (n>0) {
+    console.log("positive");
+  } else if (n==0) {
+    console.log("zero");
+  } else {
+    console.log("negative");
+  }
+</script>
+
+<script id="ch0104/02"  type="text/javascript">
+  var n = Number(prompt()).toFixed(2);
+  if (n>=0) {
+    console.log(n);
+  } else {
+    console.log(-n);
+  }
+</script>
+
+<script id="ch0104/03"  type="text/javascript">
+  var n = parseInt(prompt());
+  console.log(n%2==0?"even":"odd"); 
+</script>
+
+<script id="ch0104/04"  type="text/javascript">
+  var charCode = prompt().charCodeAt();
+  if (charCode%2==1) {
+    console.log("YES");
+  } else {
+    console.log("NO");
+  }
+</script>
+
+<script id="ch0104/05"  type="text/javascript">
+  var x = parseInt(prompt());
+  var y = parseInt(prompt());
+  if (x > y) {
+    console.log(">");
+  } else if (x == y) {
+    console.log("=");
+  } else {
+    console.log("<");
+  }
+</script>
+
+<script id="ch0104/06"  type="text/javascript">
+  var a = parseInt(prompt());
+  if (a >= 10 && a <= 99) {
+  console.log("1");
+} else {
+  console.log("0");
+}
+</script>
+
+<script id="ch0104/07"  type="text/javascript">
+  var a = parseInt(prompt());
+  var b = parseInt(prompt());
+  console.log((a >= 10 || b >= 20) ? 1 : 0);
+</script>
+
+<script id="ch0104/08"  type="text/javascript">
+  var n = parseInt(prompt());
+  console.log((n % 3 == 0 && n % 5 == 0) ? "YES" : "NO");
+</script>
+
+<script id="ch0104/09"  type="text/javascript">
+  var n = parseInt(prompt());
+  if (n%3==0&&n%5==0&&n%7==0) {
+  console.log("3 5 7");
+} else if (n%3!=0&&n%5!=0&&n%7!=0) {
+  console.log("n");
+} else if (n%3!=0&&n%5!=0&&n%7==0) {
+  console.log(7);
+} else if (n%3!=0&&n%5==0&&n%7!=0) {
+  console.log(5);
+} else if (n%3==0&&n%5!=0&&n%7!=0) {
+  console.log(3);
+} else if (n%3==0&&n%5==0&&n%7!=0) {
+  console.log("3 5");
+} else if (n%3!=0&&n%5==0&&n%7==0) {
+  console.log("5 7");
+} else {
+  console.log("3 7");
+}
+</script>
+
+<script id="ch0104/10"  type="text/javascript">
+  var score1 = parseInt(prompt());
+  var score2 = parseInt(prompt());
+  if ((score1>=60&&score2>=60)||(score1<60&&score2<60)) {
+    console.log(0);
+  } else {
+    console.log(1);
+  }
+</script>
+
+<script id="ch0104/11"  type="text/javascript">
+  var day = parseInt(prompt());
+  if (day!=1&&day!=5&&day!=3) {
+    console.log("YES");
+  } else {
+    console.log("NO");
+  }
+</script>
+
+<script id="ch0104/12"  type="text/javascript">
+  var d = parseInt(prompt());
+  if (d>90) {
+    console.log("Bike");
+  } else if (d<90) {
+    console.log("Walk");
+  } else {
+    console.log("All");
+  }
+</script>
+
+<script id="ch0104/13"  type="text/javascript">
+  var x = Number(prompt());
+  var result;
+  if (x>=0&&x<5) {
+    result=-x+2.5;
+  } else if (x>=5&&x<10) {
+    result=2-1.5*(x-3)(x-3);
+  } else if (x>=10&&x<20) {
+    result=x/2-1.5;
+  }
+  console.log(result.toFixed(3));
+</script>
+
+<script id="ch0104/14"  type="text/javascript">
+  var w = parseInt(prompt());
+  var e = prompt();
+  var charge = (w<=1000)?8:(8+Math.ceil((w-1000)/500)*4);
+  if (e=="y") {
+    console.log(charge+5);
+  } else if (e=="n") {
+    console.log(charge);
+  }
+</script>
+
+<script id="ch0104/15"  type="text/javascript">
+  var a = parseInt(prompt());
+  var b = parseInt(prompt());
+  var c = parseInt(prompt());
+  var max;
+  if (a>b) {
+    if (a>c) max=a;
+    else max=c;
+  } else {
+    if (b>c) max=b;
+    else max=c;
+  }
+  console.log(max);
+</script>
+
+<script id="ch0104/16"  type="text/javascript">
+  var a = parseInt(prompt());
+  var b = parseInt(prompt());
+  var c = parseInt(prompt());
+  if ((a+b)>c&&Math.abs(a-b)<c) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
+</script>
+
+<script id="ch0104/17"  type="text/javascript">
+  var a = parseInt(prompt());
+  if (a%400==0||(a%4==0&&a%100!=0)) {
+    console.log("Y");
+  } else {
+    console.log("N");
+  }
+</script>
+
+<script id="ch0104/18"  type="text/javascript">
+  var x = parseInt(prompt());
+  var y = parseInt(prompt());
+  console.log((x<=1&&x>=-1&&y<=1&&y>=-1)?"yes":"no");
+</script>
+
+<script id="ch0104/19"  type="text/javascript">
+  var a = Number(prompt());
+  var b = Number(prompt());
+  var oper = prompt();
+      
+  if (oper = '+'){
+    console.log(a+b);
+  } else if(oper = '-'){
+    console.log(a-b);
+  } else if(oper = '*'){
+    console.log(a*b);
+  } else if(oper = '/'){
+    if(b!==0){
+      console.log(a/b);
+    }else{
+      console.log('Divided by zero!');
+    }
+  } else {
+    console.log('Invalid operator');
+  }
+</script>
+
+<script id="ch0104/20"  type="text/javascript">
+  var a = Number(prompt());
+  var b = Number(prompt());
+  var c = Number(prompt());
+  var delta = b**2-4*a*c;
+  if (delta==0) {
+    console.log("x1=x2="+((-b+Math.sqrt(delta))/(2*a)).toFixed(5));
+  } else if (delta>0) {
+    console.log("x1="+((-b+Math.sqrt(delta))/(2*a)).toFixed(5)+";"+"x2="+((-b-Math.sqrt(delta))/(2*a)).toFixed(5));
+  } else {
+    console.log("x1="+(-0.5*b/a).toFixed(5)+"+"+(0.5*Math.sqrt(-delta)/a).toFixed(5)+"i"+";"+"x2="+(-0.5*b/a).toFixed(5)+"-"+(0.5*Math.sqrt(-delta)/a).toFixed(5)+"i");
+  }
+</script>
+
+<script id="ch0104/21"  type="text/javascript">
+  var n = parseInt(prompt());  
+  var x = parseInt(prompt());
+  var y = parseInt(prompt());  
+  if (y>=n*x) {
+    console.log(0);
+  } else {
+    console.log(n-Math.ceil(y/x));
+  }
+</script>
+
+<script id=""  type="text/javascript">
+
+</script>
+
+<script id=""  type="text/javascript">
+
+</script>
+
+<script id=""  type="text/javascript">
+
 </script>
