@@ -152,7 +152,7 @@
 <script id="ch0103/09"  type="text/javascript">
   var r = Number(prompt());
   console.log((2*r).toFixed(4));
-  console.log((2*Math.PI*r).toFixed(4));
+  console.log((Math.PI*r*2).toFixed(4));
   console.log((Math.PI*r*r).toFixed(4));
 </script>
 
@@ -175,10 +175,10 @@
 
 <script id="ch0103/13"  type="text/javascript">
   var n = Number(prompt());
-  var a1 = parseInt(n/100);
-  var a2 = parseInt(n/10%10);
-  var a3 = n%100%10;
-  console.log("a3"+"a2"+"a1");
+  var a1 = n%10;
+  var a2 = (n-a1)/10%10;
+  var a3 = (n-a2*10-a1)/100;
+  console.log("a1"+"a2"+"a3");
 </script>
 
 <script id="ch0103/14"  type="text/javascript">
