@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+
+
+//画一条实线
+for (let x = 0; x<=400; x++) {
+  dot(x,50,"red");
+}
+
+//画一条一个实点一个空点的虚线
+for(let x = 0; x<=400;x++){
+  if(x%2==0){
+    dot(x,100,"red");
+  }
+}
+
+//画一条两个实点两个空点的虚线
+for(let x = 0; x<=400;x++){
+  if(x%4==0){
+    dot(x,150,"red");
+    dot(x+1,150,"red");
+  }
+}
+
+//画一条三个实点两个空点的虚线
+for(let x = 0; x<=400;x++){
+  if(x%5==0){
+    dot(x,200,"red");
+    dot(x+1,200,"red");
+    dot(x+2,200,"red");
+  }
+}
+
+//画一条45度的斜线
+for(let x = 0; x<=400;x++){
+    dot(x,x,"Red");
+}
+for(let x = 400; x>=0;x--){
+    dot(x,400-x,"black");
+}
+
+
+//画一条跨越画布左上角和右下角的对角线
+
+for(let x = 0; x<=400;x++){
+    let y = Math.floor(0.75*x);
+    dot(x,300-y,"black");
+}
+
+for(let x = 400; x>=0;x--){
+    dot(x,0.75*x,"red");
+}
+
+//画一个空心矩形
+for (let x = 50; x<=100; x++) {
+  dot(x,80,"green");
+}
+for (let x = 50; x<=100; x++) {
+  dot(x,160,"green");
+}
+for (let y = 80; y<=160; y++) {
+  dot(50,y,"green");
+}
+for (let y = 80; y<=160; y++) {
+  dot(100,y,"green");
+}
+
+//画一个实心矩形
+for(let y=200;y<=220;y++)
+for (let x = 50; x<=100; x++) {
+  dot(x,y,"green");
+}
+
+//画一个rgb色彩空间的某一面
+  var r;
+  var g = 0;
+  for (let x = 200; x <= 251; x++) {
+    r = 0;
+    for (let y = 150; y <= 201; y++) {
+      dot(x, y, "rgb(" + r + "," + g + ",255)")
+      r += 4;
+    }
+    g += 4;
+  }
+
+//画一个空心的圆
+  for (let theta = 0; theta < 360; theta++) {
+    let r = 30;
+    dot(300 + r * Math.cos(theta), 100 + r * Math.sin(theta));
+  }
+
+//画一个实心的圆
+  for (let theta = 0; theta < 360; theta++) {
+      for(let r = 1;r<=30;r++){
+        dot(300 + r * Math.cos(theta), 200 + r * Math.sin(theta));
+      }
+  }
+
+//画一个大小合适的sin(x)的图像
+for (let x = 0; x <= 400; x++) {
+    y = Math.sin(x/15) * 30;
+    dot(x, y + 150,"yellow");
+  }
+
+</script>
+
+</html>
