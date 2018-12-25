@@ -936,6 +936,18 @@
   console.log(sum.toFixed(10));
 </script>
 
+<script id="ch0105/36"  type="text/javascript">
+
+</script>
+
+<script id=""  type="text/javascript">
+
+</script>
+
+<script id=""  type="text/javascript">
+
+</script>
+
 <script id=""  type="text/javascript">
 
 </script>
@@ -963,30 +975,72 @@
 因为1634是一个四位数。
 找出100到100000以内所有的水仙花数。
 <script id="narcissistic " sample-input="153" sample-output="YES" comment="判断一个数是否为水仙花数">
-  /*
-  var number = +(prompt());
-  var n = number.toString.length;
-  */
+  var n = +prompt();
+  var digit;
+  var sum = 0;
+
+  function getDigitNumber (a) {
+    for (let i=2; i<=5; i++) {
+      if(a/Math.pow(10,i) < 1){
+        return i;
+      }
+    } 
+  }
+
+  var digitCount = getDigitNumber(n);
+  var number = n;
+  
+  while(n > 0){
+    digit = n % 10;
+    n = (n - digit) / 10;
+    sum += Math.pow(digit,digitCount);
+  }
+    if (sum == number){
+      console.log("YES");
+    } else {
+      console.log("NO");
+    }
+
+</script>
+
+<script id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
   var sw,w,q,b,s,g;
-  for(var i=100;i<100000;i++){
+  for(var i=100;i<=100000;i++){
     g=i%10;
     s=(i-g)/10%10;
     b=(i-s*10-g)/100%10;
     q=(i-b*100-s*10-g)/1000%10;
     w=(i-q*1000-b*100-s*10-g)/10000%10;
     sw=(i-w*10000-q*1000-b*100-s*10-g)/100000;
-    
-    var n = i.toString.length;
-    if(number=sw**n+w**n+q**n+b**n+s**n+g**n){
+  
+    var n = i.toString().length;
+    var number=sw**n+w**n+q**n+b**n+s**n+g**n;
+    if(number === i){
       console.log(number);
-      
     }
   }
 </script>
-<script id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
-  
-</script>
+
 <script id="palindrom" sample-input="12321" sample-output="YES" comment="判断一个非负整数是否为回文数字">
+  var n = +prompt();
+  function getDigitNumber (a) {
+    for (let i=2; i<=5; i++) {
+      if(a/Math.pow(10,i) < 1){
+        return i;
+      }
+    } 
+  }
+
+  var digitCount = getDigitNumber(n);
+
+  var firstDigit = Math.floor(n / Math.pow(10,digitCount-1));
+  var lastDigit = n % 10;
+
+  if(firstDigit == lastDigit) {
+    console.log("YES");
+  } else {
+    console.log("NO");
+  }
   
 </script>
 
