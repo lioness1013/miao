@@ -1085,3 +1085,83 @@
 <script id="round">
   
 </script>
+
+题目：猴子选王，m个编了号的猴子顺次围成一圈，从第一只开始报数，报到n的猴子退出，退出的猴子的下一只从1开始重新报数，依此类推，最后剩下的猴子为猴王。
+输入m和n求猴王的编号。
+<script id="monkey">
+
+  function findKing(m,n) {
+    var currentMonkeyNumber = m;
+    var arr = [];
+    var counter = 0; //计数器
+
+    //所有猴子没有被淘汰则为1，淘汰了变为0
+    //先将所有猴子编号在数组内，值都为1
+    for(let i=0; i<m;i++){
+        arr[i] = 1;
+      }
+
+    if(n == 1) return m; 
+
+    while (currentMonkeyNumber > 1){ //只要有1只以上猴子,就一直把数数的循环继续下去
+      for(let i=1;i<=m;i++){
+        if (arr[i-1] == 1){
+          counter++;
+        }
+        if(counter == n) {
+          arr[i-1] = 0; //如果数到n，那么该猴子的被淘汰状态值为0
+          currentMonkeyNumber--; //当前猴子数量减少1个
+          counter = 0;
+        } 
+        if(currentMonkeyNumber == 1) break; 
+        // 疑问：如果没有break，那么当currentMonkeyNumber的值为1时，会传到外层的while判断条件吗？
+      }
+    } 
+    return arr.indexOf(1) + 1;
+  }
+</script>
+
+题目：把单词转换成拨号键盘上的数字。
+如“dell”转换成3355.“alienware”转换成254369273
+<script id="alphabetToNumber">
+  
+</script>
+
+题目：字符串展开。把字符串中包含有类似“a-g”的字符串展开成完整形式。
+例："abc-fgx-z0-9"输出"abcdefgxyz0123456789"。（类似于上面行程编码的反操作)
+<script id="unwrappString">
+  
+</script>
+
+题目：找出唯一的满足a + b + c = 1000的毕达哥拉斯三元组{a, b, c}。
+一个毕达哥拉斯三元组是一个包含三个自然数的集合，a < b< c，满足条件：
+a^2 + b^2 = c^2例如：3^2 + 4^2 = 9 + 16 = 25 = 5^2.（说白了就是一组勾股数）
+已知存在并且只存在一个毕达哥拉斯三元组满足条件a + b + c = 1000。
+找出这个三元组。
+题目中a^b代表a的b次方（这是一个通用表示法）
+<script id="bidagelasi">
+  
+</script>
+
+题目：将一个数字的各位加起来求和。如果该和大于10，将得到这个数字继续进行这种操作，直到其只有一位数。
+例如：459->4+6+9->19->1+9->10->1+0->1
+于是就输出1
+<script id="addToSingle">
+  
+</script>
+
+题目：找出最小的能被1-20中每个数整除的数。
+<script id="leastModBy20">
+  
+</script>
+
+题目：在控制输出九九乘法表。
+<script id="nineByNineTable">
+  
+</script>
+
+作业：实现一个函数cal，接收一数值表示年份，在网页中使用表格打印出这一年的日历。
+document.write(string)可以用于向网页中写入html内容
+<script id="printCalender">
+  
+</script>Z
